@@ -1,0 +1,59 @@
+.box {
+    height: 80px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+}
+
+.Contentbox {
+    width: 91%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+
+.logoBox {
+    width: 80px;
+    height: 90%;
+    background-image: url("../../Assets/JawanTechLogo.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px 40px;
+    /* background-color: red; */
+}
+
+.NavlinkBox {
+    /* background-color: blueviolet; */
+    width: 45%;
+    height: 100%;
+    color: #FFFFFF;
+}
+
+.NavlinkBox {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mailBox {
+    width: 80px;
+    height: 90%;
+    /* background-color: #141414; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+.dropdownIcon {
+    position: relative;
+    top: 4px;
+    left: 2px;
+}

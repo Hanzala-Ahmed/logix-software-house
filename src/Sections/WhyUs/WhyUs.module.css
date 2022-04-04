@@ -1,0 +1,17 @@
+.mainContainer {
+    width: 100%;
+    background: red;
+    padding: 60px 0px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whyUsBox {
+    background-color: black;
+    width: 91%;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0px;
+}
