@@ -132,10 +132,10 @@ const Services = () => {
               ))}
               <MyButton text="READ MORE" />
             </div>
-            
             <img src={ReactBox} alt="" className={servicesCss.reactBox}/>
             <img src={PSBox} alt="" className={servicesCss.psBox}/>
             <img src={WordpressBox} alt="" className={servicesCss.wordpressBox}/>
+            
           </div>
         </div>
       </div>

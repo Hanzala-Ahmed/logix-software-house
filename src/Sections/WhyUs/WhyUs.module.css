@@ -1,17 +1,29 @@
 .mainContainer {
     width: 100%;
-    background: red;
-    padding: 60px 0px;
+    background: url("../../Assets/WhyUs/WhyUsBackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 0px;
     margin: 20px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    flex-direction: column;
 }
 
 .whyUsBox {
-    background-color: black;
+    /* background-color: black; */
     width: 91%;
     display: flex;
     justify-content: space-between;
-    padding: 60px 0px;
+    /* padding: 60px 0px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.whyusWatermark {
+    position: absolute;
+    width: 80%;
 }
