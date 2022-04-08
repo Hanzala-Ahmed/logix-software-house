@@ -1,6 +1,20 @@
-.text {
+.blackShadowText {
     font-size: 30px;
     text-shadow: 0px 0px 5px #585757;
     font-weight: bolder;
     margin-bottom: 30px;
+}
+
+.whiteText {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.blackText {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    color: #141414;
 }

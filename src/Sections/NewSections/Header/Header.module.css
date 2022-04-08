@@ -33,13 +33,13 @@
     width: 45%;
     height: 100%;
     color: #FFFFFF;
-}
-
-.NavlinkBox {
-    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.NavlinkBox li {
+    list-style: none;
 }
 
 .mailBox {

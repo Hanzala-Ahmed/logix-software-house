@@ -1,0 +1,30 @@
+.mainContainer {
+    /* background-color: red; */
+    width: 100%;
+    padding: 50px 0px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workFormBox {
+    /* background-color: white; */
+    width: 91%;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 60px 0px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formBox{
+    /* background-color: aqua; */
+    width: 86%;
+    /* padding: 50px 0px; */
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

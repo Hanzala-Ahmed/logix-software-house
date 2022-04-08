@@ -8,8 +8,6 @@ import MyButton from "../../Components/Button/MyButton";
 import ReactBox from "../../Assets/3dBoxes/3dBoxReact.png";
 import PSBox from "../../Assets/3dBoxes/3dBoxPS.png";
 import WordpressBox from "../../Assets/3dBoxes/3dBoxWordpress.png";
-import { makeStyles } from "@mui/styles";
-
 
 const servicesList = [
   {
@@ -61,26 +59,7 @@ const servicesList = [
   }
 ];
 
-const useStyle = makeStyles((theme) => ({
-  mainBox: {
-    // backgroundColor: "aqua",
-    width: "100%",
-    padding: "50px 0px",
-    margin: "20px 0px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  servicesBox: {
-    // backgroundColor: "black",
-    width: "91%",
-    display: "flex",
-    justifyContent: "space-between",
-  },
-}))
 const Services = () => {
-  const classes = useStyle();
   const [activeBtn, setActiveBtn] = useState("Web Development");
 
   const onBtnClick = (e) => {
@@ -133,13 +112,13 @@ const Services = () => {
           <div className={servicesCss.servicesCnt}>
             <div className={servicesCss.servicesCntBox}>
               {servicesList.map((val, ind) => (
-                <div key={ind}>
+                <>
                   {val.name === activeBtn ? (
                     <>
                       <p>{val.heading}</p>
                       <div className={servicesCss.contetntDiv}>
                         {servicesList[ind].list.map((value, index) => (
-                          <p className={servicesCss.contetntDivTxt} key={index}>
+                          <p className={servicesCss.contetntDivTxt}>
                             <FaArrowRight className={servicesCss.arrowIcon} />{" "}
                             {value}
                           </p>
@@ -149,7 +128,7 @@ const Services = () => {
                   ) : (
                     <></>
                   )}
-                </div>
+                </>
               ))}
               <MyButton text="READ MORE" />
             </div>

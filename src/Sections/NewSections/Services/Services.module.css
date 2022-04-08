@@ -62,21 +62,21 @@
 
 .reactBox {
     position: absolute;
+    top: 50%;
+    left: 72%;
     width: 140px;
-    top: 60%;
-    left: 40%;
 }
 
 .psBox {
     position: absolute;
-    width: 97px;
-    top: 87%;
-    left: 26%;
+    top: 35%;
+    left: 45%;
+    width: 110px;
 }
 
 .wordpressBox {
     position: absolute;
-    width: 90px;
-    top: 84%;
-    left: 65%;
+    top: 76%;
+    left: 50%;
+    width: 84px;
 }

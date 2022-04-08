@@ -1,13 +1,27 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
+import { ThemeProvider } from '@mui/styles';
+import { createTheme } from '@mui/material';
+
+const themeMenus = createTheme({breakpoints: {
+  values: {
+    xs: 0,
+    sm: 375,
+    md: 575,
+    lg: 768,
+    xl: 990,
+    xxl: 1200,
+  },
+},});
+
 function App() {
   return (
-    <div className="App">
+      <ThemeProvider theme={themeMenus}>
       <Routes>
         <Route path='/' element={<Home />}></Route>
       </Routes>
-    </div>
+      </ThemeProvider>
   );
 }
 

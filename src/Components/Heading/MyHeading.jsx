@@ -4,7 +4,7 @@ import headingCss from "./MyHeading.module.css"
 const MyHeading = (props) => {
   return (
     <>
-      <p className={headingCss.text}>{props.text}</p>
+      <p className={`${headingCss[props.className]}`}>{props.text}</p>
     </>
   )
 }
