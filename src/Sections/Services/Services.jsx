@@ -1,6 +1,5 @@
 // import React, { useRef } from 'react'
 import MyHeading from "../../Components/Heading/MyHeading";
-import servicesCss from "./Services.module.css";
 import ServicesBtn from "../../Components/ServicesButton/ServicesBtn";
 import { FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
@@ -9,7 +8,7 @@ import ReactBox from "../../Assets/3dBoxes/3dBoxReact.png";
 import PSBox from "../../Assets/3dBoxes/3dBoxPS.png";
 import WordpressBox from "../../Assets/3dBoxes/3dBoxWordpress.png";
 import { makeStyles } from "@mui/styles";
-
+import ServicesCntBox from "../../Components/ServicesCntBox/ServicesCntBox";
 
 const servicesList = [
   {
@@ -42,12 +41,22 @@ const servicesList = [
     name: "UI/UX Design",
     heading:
       "PHP - Node.js - Bootstrap - AngularJS - WordPress - Figma - Axure RP - Slack - Skype",
-    list: ["Dedicated team", "Hire Back-End Developer", "Hire Front-End Developer"],
+    list: [
+      "Dedicated team",
+      "Hire Back-End Developer",
+      "Hire Front-End Developer",
+    ],
   },
   {
     name: "Ecomerce Development",
-    heading: "Value Proposition Canvas - Google Ads - Facebook Ad - Social Media",
-    list: ["Conversion marketing", "Content marketing", "PPC services", "Social media marketing services"],
+    heading:
+      "Value Proposition Canvas - Google Ads - Facebook Ad - Social Media",
+    list: [
+      "Conversion marketing",
+      "Content marketing",
+      "PPC services",
+      "Social media marketing services",
+    ],
   },
   {
     name: "Cloud Solution",
@@ -56,9 +65,10 @@ const servicesList = [
   },
   {
     name: "Product Automation",
-    heading: "WordPress - Woocommerce PHP - AngularJS - Sketch - Figma - Axure RP",
+    heading:
+      "WordPress - Woocommerce PHP - AngularJS - Sketch - Figma - Axure RP",
     list: ["Fixed price website", "UX, UI design", "Brand Identity"],
-  }
+  },
 ];
 
 const useStyle = makeStyles((theme) => ({
@@ -77,8 +87,121 @@ const useStyle = makeStyles((theme) => ({
     width: "91%",
     display: "flex",
     justifyContent: "space-between",
+    [theme.breakpoints.down("lg")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
   },
-}))
+
+  services: {
+    // backgroundColor: "blue",
+    width: "42%",
+    [theme.breakpoints.down("lg")]: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  },
+
+  servicesBtnMainBox: {
+    [theme.breakpoints.down("lg")]: {
+      width: "90%",
+    },
+  },
+
+  servicesCnt: {
+    // backgroundColor: "blueviolet",
+    width: "66%",
+    position: "relative",
+    marginLeft: "100px",
+    [theme.breakpoints.down("xl")]: {
+      width: "45%",
+    },
+    [theme.breakpoints.down("lg")]: {
+      display: "none",
+    },
+  },
+
+  servicesCntBox: {
+    // backgroundColor: "burlywood",
+    marginTop: "68px",
+  },
+
+  contetntDiv: {
+    // backgroundColor: "yellow",
+    padding: "20px 0px",
+    marginTop: "30px",
+    color: "#1B2935",
+  },
+
+  contetntDivTxt: {
+    width: "fit-content",
+    marginTop: "12px",
+    fontWeight: "bold",
+    // backgroundColor: "red",
+    display: "flex",
+    color: "#1B2935",
+    alignItems: "center",
+    cursor: "pointer",
+    transition: "transform 0.350s linear",
+    "&:hover": {
+      transform: "translateX(14px)",
+    },
+    [theme.breakpoints.down("xl")]: {
+      fontSize: "15px",
+    },
+  },
+
+  arrowIcon: {
+    marginRight: "10px",
+    fontSize: "12px",
+  },
+
+  btmBtn: {
+    [theme.breakpoints.down("lg")]: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+    },
+  },
+
+  list: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  reactBox: {
+    position: "absolute",
+    width: "140px",
+    top: "60%",
+    left: "40%",
+    [theme.breakpoints.down("xl")]: {
+      display: "none",
+    },
+  },
+
+  psBox: {
+    position: "absolute",
+    width: "97px",
+    top: "87%",
+    left: "26%",
+    [theme.breakpoints.down("xl")]: {
+      display: "none",
+    },
+  },
+
+  wordpressBox: {
+    position: "absolute",
+    width: "90px",
+    top: "84%",
+    left: "65%",
+    [theme.breakpoints.down("xl")]: {
+      display: "none",
+    },
+  },
+}));
 const Services = () => {
   const classes = useStyle();
   const [activeBtn, setActiveBtn] = useState("Web Development");
@@ -93,54 +216,177 @@ const Services = () => {
   };
   return (
     <>
-      <div className={servicesCss.mainBox}>
-        <div className={servicesCss.servicesBox}>
-          <div className={servicesCss.services}>
-            <MyHeading text="SERVICES" className="blackShadowText"/>
-            <div className={servicesCss.servicesBtnMainBox}>
+      <div className={classes.mainBox}>
+        <div className={classes.servicesBox}>
+          <div className={classes.services}>
+            <MyHeading text="SERVICES" className="blackShadowText" />
+            <div className={classes.servicesBtnMainBox}>
               <ServicesBtn
                 onClick={onBtnClick}
-                className={activeBtn === "Web Development" ? "activeBtn" : "unactiveBtn"}
+                className={
+                  activeBtn === "Web Development" ? "activeBtn" : "unactiveBtn"
+                }
                 text="Web Development"
               />
+              {servicesList.map((val, ind) => (
+                <div key={ind}>
+                  {val.name === "Web Development" ? (
+                    <ServicesCntBox
+                      className={
+                        activeBtn === "Web Development"
+                          ? "servicesCnt"
+                          : "servicesCntBlock"
+                      }
+                      heading={val.heading}
+                      list={servicesList[ind].list.map((value, index) => (
+                        <p className={classes.contetntDivTxt} key={index}>
+                          <FaArrowRight className={classes.arrowIcon} />
+                          {value}
+                        </p>
+                      ))}
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
+
               <ServicesBtn
                 onClick={onBtnClick}
-                className={activeBtn === "Mobile App Development" ? "activeBtn" : "unactiveBtn"}
+                className={
+                  activeBtn === "Mobile App Development"
+                    ? "activeBtn"
+                    : "unactiveBtn"
+                }
                 text="Mobile App Development"
               />
+              {servicesList.map((val, ind) => (
+                <div key={ind}>
+                  {val.name === "Mobile App Development" ? (
+                    <ServicesCntBox
+                      className={
+                        activeBtn === "Mobile App Development"
+                          ? "servicesCnt"
+                          : "servicesCntBlock"
+                      }
+                      heading={val.heading}
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
+
               <ServicesBtn
                 onClick={onBtnClick}
-                className={activeBtn === "UI/UX Design" ? "activeBtn" : "unactiveBtn"}
+                className={
+                  activeBtn === "UI/UX Design" ? "activeBtn" : "unactiveBtn"
+                }
                 text="UI/UX Design"
               />
+              {servicesList.map((val, ind) => (
+                <div key={ind}>
+                  {val.name === "UI/UX Design" ? (
+                    <ServicesCntBox
+                      className={
+                        activeBtn === "UI/UX Design"
+                          ? "servicesCnt"
+                          : "servicesCntBlock"
+                      }
+                      heading={val.heading}
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
+
               <ServicesBtn
                 onClick={onBtnClick}
-                className={activeBtn === "Ecomerce Development" ? "activeBtn" : "unactiveBtn"}
+                className={
+                  activeBtn === "Ecomerce Development"
+                    ? "activeBtn"
+                    : "unactiveBtn"
+                }
                 text="Ecomerce Development"
               />
+              {servicesList.map((val, ind) => (
+                <div key={ind}>
+                  {val.name === "Ecomerce Development" ? (
+                    <ServicesCntBox
+                      className={
+                        activeBtn === "Ecomerce Development"
+                          ? "servicesCnt"
+                          : "servicesCntBlock"
+                      }
+                      heading={val.heading}
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
               <ServicesBtn
                 onClick={onBtnClick}
-                className={activeBtn === "Cloud Solution" ? "activeBtn" : "unactiveBtn"}
+                className={
+                  activeBtn === "Cloud Solution" ? "activeBtn" : "unactiveBtn"
+                }
                 text="Cloud Solution"
               />
+              {servicesList.map((val, ind) => (
+                <div key={ind}>
+                  {val.name === "Cloud Solution" ? (
+                    <ServicesCntBox
+                      className={
+                        activeBtn === "Cloud Solution"
+                          ? "servicesCnt"
+                          : "servicesCntBlock"
+                      }
+                      heading={val.heading}
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
               <ServicesBtn
                 onClick={onBtnClick}
-                className={activeBtn === "Product Automation" ? "activeBtn" : "unactiveBtn"}
+                className={
+                  activeBtn === "Product Automation"
+                    ? "activeBtn"
+                    : "unactiveBtn"
+                }
                 text="Product Automation"
               />
+              {servicesList.map((val, ind) => (
+                <div key={ind}>
+                  {val.name === "Product Automation" ? (
+                    <ServicesCntBox
+                      className={
+                        activeBtn === "Product Automation"
+                          ? "servicesCnt"
+                          : "servicesCntBlock"
+                      }
+                      heading={val.heading}
+                    />
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
-          <div className={servicesCss.servicesCnt}>
-            <div className={servicesCss.servicesCntBox}>
+          <div className={classes.servicesCnt}>
+            <div className={classes.servicesCntBox}>
               {servicesList.map((val, ind) => (
                 <div key={ind}>
                   {val.name === activeBtn ? (
                     <>
                       <p>{val.heading}</p>
-                      <div className={servicesCss.contetntDiv}>
+                      <div className={classes.contetntDiv}>
                         {servicesList[ind].list.map((value, index) => (
-                          <p className={servicesCss.contetntDivTxt} key={index}>
-                            <FaArrowRight className={servicesCss.arrowIcon} />{" "}
+                          <p className={classes.contetntDivTxt} key={index}>
+                            <FaArrowRight className={classes.arrowIcon} />{" "}
                             {value}
                           </p>
                         ))}
@@ -151,12 +397,13 @@ const Services = () => {
                   )}
                 </div>
               ))}
-              <MyButton text="READ MORE" />
+              <div className={classes.btmBtn}>
+                <MyButton text="READ MORE" />
+              </div>
             </div>
-            <img src={ReactBox} alt="" className={servicesCss.reactBox}/>
-            <img src={PSBox} alt="" className={servicesCss.psBox}/>
-            <img src={WordpressBox} alt="" className={servicesCss.wordpressBox}/>
-            
+            <img src={ReactBox} alt="" className={classes.reactBox} />
+            <img src={PSBox} alt="" className={classes.psBox} />
+            <img src={WordpressBox} alt="" className={classes.wordpressBox} />
           </div>
         </div>
       </div>
