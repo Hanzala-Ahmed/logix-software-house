@@ -29,7 +29,7 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     [theme.breakpoints.down("lg")]:{
-      flexDirection: "column"
+      flexDirection: "column",
     },
   },
 
@@ -117,6 +117,12 @@ const useStyle = makeStyles((theme) => ({
       [theme.breakpoints.down("lg")]:{
         fontSize: "34px"
       },
+      [theme.breakpoints.down("md")]:{
+        fontSize: "28px"
+      },
+      [theme.breakpoints.down("sm")]:{
+        fontSize: "20px"
+      },
     },
     [theme.breakpoints.down("lg")]:{
       display: "flex",
@@ -142,6 +148,12 @@ const useStyle = makeStyles((theme) => ({
       textAlign: "center",
       fontSize: "16px",
       width: "80%",
+    },
+    [theme.breakpoints.down("md")]:{
+      fontSize: "16px"
+    },
+    [theme.breakpoints.down("sm")]:{
+      fontSize: "12px"
     },
   },
 

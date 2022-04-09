@@ -1,15 +1,48 @@
 import React from "react";
 import WhyusServicesBox from "../../Components/WhyusServicesBox/WhyusServicesBox";
-import whyUsCss from "./WhyUs.module.css";
 import whyusImg1 from "../../Assets/WhyUs/whyusImg1.png";
-import whyusImg from "../../Assets/WhyUs/whyUs.png"
+import whyusImg from "../../Assets/WhyUs/whyUs.png";
+import bgImg from "../../Assets/Backgrounds/sectionBackground.png"
 import MyButton from "../../Components/Button/MyButton";
+import { makeStyles } from "@mui/styles";
+
+const useStyle = makeStyles((theme) => ({
+    mainContainer: {
+    width: "100%",
+    background: `url(${bgImg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    padding: "50px 0px",
+    margin: "20px 0px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    flexDirection: "column",
+},
+
+  whyUsBox: {
+    // backgroundColor: "black",
+    width: "91%",
+  // padding: "60px 0px",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+},
+
+  whyusWatermark: {
+    position: "absolute",
+    width: "80%",
+    pointerEvents: "none",
+},
+}))
 
 const WhyUs = () => {
+  const classes = useStyle();
   return (
     <>
-      <div className={whyUsCss.mainContainer}>
-        <div className={whyUsCss.whyUsBox}>
+      <div className={classes.mainContainer}>
+        <div className={classes.whyUsBox}>
           <WhyusServicesBox
             img={whyusImg1}
             heading="OPTIMIZED YOUR SERVICE"
@@ -59,10 +92,10 @@ const WhyUs = () => {
             project."
           />
         </div>
-        <div className={whyUsCss.getInTouchBtn}>
+        <div className={classes.getInTouchBtn}>
         <MyButton text="GET IN TOUCH"/>
         </div>
-        <img src={whyusImg} alt="" className={whyUsCss.whyusWatermark}/>
+        <img src={whyusImg} alt="" className={classes.whyusWatermark}/>
       </div>
     </>
   );

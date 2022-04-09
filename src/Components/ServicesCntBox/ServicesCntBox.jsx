@@ -16,7 +16,13 @@ const useStyle = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("lg")]: {
       display: "none"
-    }
+    },
+    [theme.breakpoints.down("md")]:{
+      fontSize: "14px"
+    },
+    [theme.breakpoints.down("sm")]:{
+      fontSize: "13px"
+    },
   },
 
   servicesCntBlock: {

@@ -21,11 +21,11 @@ const useStyle = makeStyles((theme) => ({
     marginLeft: "30px",
     transition: "all 0.400s linear",
     [theme.breakpoints.down("xl")]: {
-      width: "250px",
+      width: "94%",
       fontSize: "16px",
     },
     [theme.breakpoints.down("lg")]:{
-      width: "100%",
+      width: "94%",
       margin: "0px 0px 24px 0px",
       transition: "none",
     },
@@ -53,12 +53,11 @@ const useStyle = makeStyles((theme) => ({
     color: "white",
     },
     [theme.breakpoints.down("xl")]: {
-      width: "260px",
+      width: "94%",
       fontSize: "16px",
     },
     [theme.breakpoints.down("lg")]:{
-      width: "100%",
-      transition: "none",
+      width: "94%",
     },
   },
 }));

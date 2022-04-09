@@ -106,8 +106,9 @@ const useStyle = makeStyles((theme) => ({
   },
 
   servicesBtnMainBox: {
+    // backgroundColor: "red",
     [theme.breakpoints.down("lg")]: {
-      width: "90%",
+      width: "100%",
     },
   },
 
@@ -151,6 +152,12 @@ const useStyle = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xl")]: {
       fontSize: "15px",
+    },
+    [theme.breakpoints.down("md")]:{
+      fontSize: "14px"
+    },
+    [theme.breakpoints.down("sm")]:{
+      fontSize: "12px"
     },
   },
 
@@ -270,6 +277,12 @@ const Services = () => {
                           : "servicesCntBlock"
                       }
                       heading={val.heading}
+                      list={servicesList[ind].list.map((value, index) => (
+                        <p className={classes.contetntDivTxt} key={index}>
+                          <FaArrowRight className={classes.arrowIcon} />
+                          {value}
+                        </p>
+                      ))}
                     />
                   ) : (
                     <></>
@@ -294,6 +307,12 @@ const Services = () => {
                           : "servicesCntBlock"
                       }
                       heading={val.heading}
+                      list={servicesList[ind].list.map((value, index) => (
+                        <p className={classes.contetntDivTxt} key={index}>
+                          <FaArrowRight className={classes.arrowIcon} />
+                          {value}
+                        </p>
+                      ))}
                     />
                   ) : (
                     <></>
@@ -320,6 +339,12 @@ const Services = () => {
                           : "servicesCntBlock"
                       }
                       heading={val.heading}
+                      list={servicesList[ind].list.map((value, index) => (
+                        <p className={classes.contetntDivTxt} key={index}>
+                          <FaArrowRight className={classes.arrowIcon} />
+                          {value}
+                        </p>
+                      ))}
                     />
                   ) : (
                     <></>
@@ -343,6 +368,12 @@ const Services = () => {
                           : "servicesCntBlock"
                       }
                       heading={val.heading}
+                      list={servicesList[ind].list.map((value, index) => (
+                        <p className={classes.contetntDivTxt} key={index}>
+                          <FaArrowRight className={classes.arrowIcon} />
+                          {value}
+                        </p>
+                      ))}
                     />
                   ) : (
                     <></>
@@ -368,6 +399,12 @@ const Services = () => {
                           : "servicesCntBlock"
                       }
                       heading={val.heading}
+                      list={servicesList[ind].list.map((value, index) => (
+                        <p className={classes.contetntDivTxt} key={index}>
+                          <FaArrowRight className={classes.arrowIcon} />
+                          {value}
+                        </p>
+                      ))}
                     />
                   ) : (
                     <></>
