@@ -1,19 +1,23 @@
 import { TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-import messageInputCss from "./MessageInput.module.css"
 
 const MessageInput = (props) => {
     const style = makeStyles(() => ({
         textField: {
           width: "100%",
         },
+        mainBox: {
+          marginBottom: "26px",
+          width: "90%",
+          color: "white",
+      },
       }));
     
       const classes = style();
   return (
     <>
-      <div className={messageInputCss.mainBox}>
+      <div className={classes.mainBox}>
         <TextField
           id="standard-multiline-static"
           label={props.value}
