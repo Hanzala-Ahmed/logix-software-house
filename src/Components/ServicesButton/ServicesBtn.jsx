@@ -26,8 +26,7 @@ const useStyle = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("lg")]:{
       width: "94%",
-      margin: "0px 0px 24px 0px",
-      margin: "auto",
+      margin: "0px auto 24px auto",
       transition: "none",
     },
   },
@@ -60,6 +59,7 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down("lg")]:{
       width: "94%",
       margin: "0px auto 24px auto",
+      transition: "none",
     },
   },
 }));
