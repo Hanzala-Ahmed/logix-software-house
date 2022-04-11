@@ -8,10 +8,9 @@ const useStyle = makeStyles((theme) => ({
     // backgroundColor: "blueviolet",
     width: "66%",
     position: "relative",
-    marginLeft: "100px",
+    margin: "auto",
     [theme.breakpoints.down("lg")]: {
       width: "90%",
-      marginLeft: "0px",
       marginBottom: "34px",
     },
     [theme.breakpoints.up("lg")]: {

@@ -97,6 +97,9 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down("lg")]:{
       width: "100%"
     },
+    [theme.breakpoints.down("md")]:{
+      marginBottom: "10px"
+    },
   },
 
   sliderCntDiv: {
@@ -115,13 +118,14 @@ const useStyle = makeStyles((theme) => ({
         fontSize: "26px"
       },
       [theme.breakpoints.down("lg")]:{
+        textAlign: "center",
         fontSize: "34px"
       },
       [theme.breakpoints.down("md")]:{
         fontSize: "28px"
       },
       [theme.breakpoints.down("sm")]:{
-        fontSize: "20px"
+        fontSize: "22px",
       },
     },
     [theme.breakpoints.down("lg")]:{
@@ -153,7 +157,7 @@ const useStyle = makeStyles((theme) => ({
       fontSize: "16px"
     },
     [theme.breakpoints.down("sm")]:{
-      fontSize: "12px"
+      fontSize: "16px"
     },
   },
 
@@ -232,6 +236,9 @@ const useStyle = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     marginBottom: "20px",
+    [theme.breakpoints.down("md")]:{
+      display: "none"
+    }
   },
 }));
 

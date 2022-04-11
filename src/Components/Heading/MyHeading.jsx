@@ -7,7 +7,9 @@ const useStyle = makeStyles((theme) => ({
     textShadow: "0px 0px 5px #585757",
     fontWeight: "bolder",
     marginBottom: "30px",
-    textAlign: "center",
+    [theme.breakpoints.down("lg")]: {
+      textAlign: "center",
+    },
     [theme.breakpoints.down("md")]: {
       fontSize: "27px",
     },

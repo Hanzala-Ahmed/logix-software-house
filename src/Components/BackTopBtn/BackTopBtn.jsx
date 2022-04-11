@@ -16,9 +16,9 @@ const useStyle = makeStyles((theme) => ({
     alignItems: "center",
     cursor: "pointer",
     scrollBehavior: "smooth",
-    [theme.breakpoints.down("sm")]:{
-      display: "none",
-    }
+    // [theme.breakpoints.down("sm")]:{
+    //   display: "none",
+    // }
 },
 mainBoxHide: {
     display: "none",
