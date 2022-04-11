@@ -90,6 +90,8 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down("lg")]: {
       flexDirection: "column",
       alignItems: "center",
+      justifyContent: "center",
+      margin: "auto"
     },
   },
 
