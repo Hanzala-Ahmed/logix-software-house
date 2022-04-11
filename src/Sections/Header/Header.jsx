@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaCaretDown, FaEnvelope, FaCaretUp } from "react-icons/fa";
-import { Grid, List, ListItem, Menu, MenuItem } from "@mui/material";
+import { List, ListItem, Menu, MenuItem } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import PersistentDrawerRight from "../../Components/Drawer/Drawer.tsx";
 import logoImg from "../../Assets/JawanTechLogo.png";
@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     position: "absolute",
     top: "0%",
-    // backgroundColor: "red",
-    zIndex: "100"
+    // backgroundColor: "blue",
+    zIndex: "100",
   },
   scrollBox: {
     height: "80px",
@@ -49,14 +49,15 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   logoBox: {
-    width: "80px",
-    height: "90%",
+    // width: "30px",
+    height: "70px",
     backgroundImage: `url(${logoImg})`,
     backgroundPposition: "center center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     padding: "0px 40px",
     // backgroundColor: "red",
+    margin: "20px 0px"
   },
   Contentbox: {
     width: "91%",
@@ -155,10 +156,10 @@ const Header = () => {
 
   return (
     <>
-      <Grid container className={isVisible ? classes.scrollBox : classes.box}>
-        <Grid className={classes.Contentbox}>
-          <Grid className={classes.logoBox}></Grid>
-          <Grid className={classes.NavlinkBox}>
+      <div container className={isVisible ? classes.scrollBox : classes.box}>
+        <div className={classes.Contentbox}>
+          <div className={classes.logoBox}></div>
+          <div className={classes.NavlinkBox}>
             <li>Home</li>
 
             <List
@@ -203,15 +204,15 @@ const Header = () => {
             <li>Details</li>
             <li>Our Project</li>
             <li>Contact Us</li>
-          </Grid>
-          <Grid className={classes.mailBox}>
+          </div>
+          <div className={classes.mailBox}>
             <FaEnvelope className={classes.envelopeIcon} />
-            <Grid className={classes.drawerBox}>
+            <div className={classes.drawerBox}>
               <PersistentDrawerRight />
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

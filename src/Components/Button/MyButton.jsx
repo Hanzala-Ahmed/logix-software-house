@@ -4,7 +4,7 @@ import React from "react";
 const useStyle = makeStyles((theme) => ({
   sliderCntBtn: {
     backgroundColor: "white",
-    padding: "8px 18px",
+    padding: "7px 18px",
     marginTop: "30px",
     color: "#006838",
     border: "1px solid #006838",
@@ -15,6 +15,12 @@ const useStyle = makeStyles((theme) => ({
     outline: "none",
     boxShadow:
       "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+    [theme.breakpoints.down("xl")]: {
+      fontSize: "18px",
+    },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "16px",
+    },
   },
 }));
 

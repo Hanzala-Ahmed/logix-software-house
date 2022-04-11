@@ -9,12 +9,16 @@ const useStyle = makeStyles((theme) => ({
     height: "50px",
     borderRadius: "50%",
     position: "fixed",
-    bottom: "60px",
+    bottom: "40px",
     right: "40px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     cursor: "pointer",
+    scrollBehavior: "smooth",
+    [theme.breakpoints.down("sm")]:{
+      display: "none",
+    }
 },
 mainBoxHide: {
     display: "none",
@@ -38,17 +42,19 @@ const BackTopBtn = () => {
     let heightToHideFrom = 300;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-
-    if (winScroll > heightToHideFrom) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  const goTop = ()=> {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+      
+      if (winScroll > heightToHideFrom) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    
+    const goTop = ()=> {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
   }
 
   return (

@@ -59,7 +59,7 @@ export default function PersistentDrawerRight() {
           width: "0px",
           flexShrink: 0,
           "& .MuiDrawer-paper": {
-            width: "40%",
+            width: "70%",
             backgroundColor: "rgba(24, 117, 98, 1)",
             color: "white",
             borderLeft: "0.3px solid rgba(555, 555, 555, 0.4)",
