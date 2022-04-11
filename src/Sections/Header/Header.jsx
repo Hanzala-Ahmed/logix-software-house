@@ -172,7 +172,7 @@ const Header = () => {
                 className={classes.services}
                 onClick={handleClickListItem}
               >
-                <li>
+                <li onClick={handleClickListItem}>
                   Services
                   {!isExpand ? (
                     <FaCaretDown className={classes.dropdownIcon} />
