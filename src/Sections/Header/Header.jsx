@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
   services: {
     cursor: "pointer",
     // marginTop: "40px"
+    padding: "0px"
   },
   dropdownIcon: {
     position: "relative",
@@ -166,11 +167,18 @@ const Header = () => {
               component="nav"
               aria-label="Device settings"
               onClick={handleClickListItem}
-            >
+              >
               <ListItem
                 // button
                 className={classes.services}
                 onClick={handleClickListItem}
+                sx={{
+                  paddding: "0px",
+                  paddingLeft: "0px",
+                  paddingTop: "0px",
+                  paddingBottom: "0px",
+                  paddingRight: "0px",
+                }}
               >
                 <li onClick={handleClickListItem}>
                   Services
