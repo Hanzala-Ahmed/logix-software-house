@@ -2,13 +2,14 @@
 import MyHeading from "../../Components/Heading/MyHeading";
 import ServicesBtn from "../../Components/ServicesButton/ServicesBtn";
 import { FaArrowRight } from "react-icons/fa";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MyButton from "../../Components/Button/MyButton";
 import ReactBox from "../../Assets/3dBoxes/3dBoxReact.png";
 import PSBox from "../../Assets/3dBoxes/3dBoxPS.png";
 import WordpressBox from "../../Assets/3dBoxes/3dBoxWordpress.png";
 import { makeStyles } from "@mui/styles";
 import ServicesCntBox from "../../Components/ServicesCntBox/ServicesCntBox";
+import { motion, transform } from "framer-motion";
 
 const servicesList = [
   {
@@ -48,7 +49,7 @@ const servicesList = [
     ],
   },
   {
-    name: "Ecomerce Development",
+    name: "Ecommerce Development",
     heading:
       "Value Proposition Canvas - Google Ads - Facebook Ad - Social Media",
     list: [
@@ -91,7 +92,7 @@ const useStyle = makeStyles((theme) => ({
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      margin: "auto"
+      margin: "auto",
     },
   },
 
@@ -155,11 +156,11 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down("xl")]: {
       fontSize: "15px",
     },
-    [theme.breakpoints.down("md")]:{
-      fontSize: "14px"
+    [theme.breakpoints.down("md")]: {
+      fontSize: "14px",
     },
-    [theme.breakpoints.down("sm")]:{
-      fontSize: "12px"
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px",
     },
   },
 
@@ -181,7 +182,7 @@ const useStyle = makeStyles((theme) => ({
     flexDirection: "column",
   },
 
-  reactBox: {
+  ReactBoxMain: {
     position: "absolute",
     width: "140px",
     top: "60%",
@@ -191,7 +192,38 @@ const useStyle = makeStyles((theme) => ({
     },
   },
 
-  psBox: {
+  "@keyframes shake": {
+    "0%, 100%": {
+      transform: "translateX(5px) translateY(0px)",
+      transformOrigin: "60% 60%",
+    },
+    "15%": {
+      transform: "translateX(10px) translateY(10px) rotate(-2deg)",
+    },
+    "30%": {
+      transform: "translateX(8px) translateY(9px) rotate(2deg)",
+    },
+    "45%": {
+      transform: "translateX(-15px) translateY(-15px) rotate(-3.6deg)",
+    },
+    "60%": {
+      transform: "translateX(12px) translateX(9px) rotate(2.4deg)",
+    },
+    "75%": {
+      transform: "translateX(14px) translateY(10px) rotate(-1.2deg)",
+    },
+  },
+
+  reactBox: {
+    // position: "absolute",
+    width: "140px",
+    animation: `$shake`,
+    animationDuration: "10s",
+    animationDirection: "alternate",
+    animationIterationCount: "infinite",
+  },
+
+  psBoxMain: {
     position: "absolute",
     width: "97px",
     top: "87%",
@@ -201,7 +233,15 @@ const useStyle = makeStyles((theme) => ({
     },
   },
 
-  wordpressBox: {
+  psBox: {
+    width: "97px",
+    animation: `$shake`,
+    animationDuration: "10s",
+    animationDirection: "alternate",
+    animationIterationCount: "infinite",
+  },
+
+  wordpressBoxMain: {
     position: "absolute",
     width: "90px",
     top: "84%",
@@ -209,6 +249,14 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down("xl")]: {
       display: "none",
     },
+  },
+
+  wordpressBox: {
+    width: "90px",
+    animation: `$shake`,
+    animationDuration: "10s",
+    animationDirection: "alternate",
+    animationIterationCount: "infinite",
   },
 }));
 const Services = () => {
@@ -223,6 +271,7 @@ const Services = () => {
       console.log(error);
     }
   };
+
   return (
     <>
       <div className={classes.mainBox}>
@@ -325,18 +374,18 @@ const Services = () => {
               <ServicesBtn
                 onClick={onBtnClick}
                 className={
-                  activeBtn === "Ecomerce Development"
+                  activeBtn === "Ecommerce Development"
                     ? "activeBtn"
                     : "unactiveBtn"
                 }
-                text="Ecomerce Development"
+                text="Ecommerce Development"
               />
               {servicesList.map((val, ind) => (
                 <div key={ind}>
-                  {val.name === "Ecomerce Development" ? (
+                  {val.name === "Ecommerce Development" ? (
                     <ServicesCntBox
                       className={
-                        activeBtn === "Ecomerce Development"
+                        activeBtn === "Ecommerce Development"
                           ? "servicesCnt"
                           : "servicesCntBlock"
                       }
@@ -382,6 +431,7 @@ const Services = () => {
                   )}
                 </div>
               ))}
+
               <ServicesBtn
                 onClick={onBtnClick}
                 className={
@@ -421,15 +471,25 @@ const Services = () => {
                 <div key={ind}>
                   {val.name === activeBtn ? (
                     <>
-                      <p>{val.heading}</p>
-                      <div className={classes.contetntDiv}>
-                        {servicesList[ind].list.map((value, index) => (
-                          <p className={classes.contetntDivTxt} key={index}>
-                            <FaArrowRight className={classes.arrowIcon} />{" "}
-                            {value}
-                          </p>
-                        ))}
-                      </div>
+                      <motion.div
+                        key={ind}
+                        animate={{ opacity: 1, x: 0, y: 0 }}
+                        initial={{ opacity: 0, x: -40 }}
+                        exit={{ opacity: 0, x: -30 }}
+                        transition={{ duration: 0.65 }}
+                        className={classes.contentBox}
+                        id={classes.contentBoxTransition}
+                      >
+                        <p>{val.heading}</p>
+                        <div className={classes.contetntDiv}>
+                          {servicesList[ind].list.map((value, index) => (
+                            <p className={classes.contetntDivTxt} key={index}>
+                              <FaArrowRight className={classes.arrowIcon} />{" "}
+                              {value}
+                            </p>
+                          ))}
+                        </div>
+                      </motion.div>
                     </>
                   ) : (
                     <></>
@@ -440,9 +500,18 @@ const Services = () => {
                 <MyButton text="READ MORE" />
               </div>
             </div>
-            <img src={ReactBox} alt="" className={classes.reactBox} />
-            <img src={PSBox} alt="" className={classes.psBox} />
-            <img src={WordpressBox} alt="" className={classes.wordpressBox} />
+
+            <div className={classes.ReactBoxMain}>
+              <img src={ReactBox} alt="" className={classes.reactBox} />
+            </div>
+
+            <div className={classes.psBoxMain}>
+              <img src={PSBox} alt="" className={classes.psBox} />
+            </div>
+
+            <div className={classes.wordpressBoxMain}>
+              <img src={WordpressBox} alt="" className={classes.wordpressBox} />
+            </div>
           </div>
         </div>
       </div>

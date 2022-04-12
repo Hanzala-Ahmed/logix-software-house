@@ -7,6 +7,7 @@ import contentImg3 from "../../Assets/FeaturedWorks/contentImage3.png";
 import contentImg4 from "../../Assets/FeaturedWorks/contentImage4.png";
 import contentImg5 from "../../Assets/FeaturedWorks/contentImage5.png";
 import { makeStyles } from "@mui/styles";
+import { motion } from "framer-motion";
 
 const featuredWorks = [
   {
@@ -81,7 +82,7 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    transitionDuration: "1s",
+    transitionDuration: "0s",
     [theme.breakpoints.down("xl")]: {
       margin: "0px 0px",
     },
@@ -235,25 +236,38 @@ const FeaturedWorks = () => {
               onBtnClick={onPaginationClick}
             />
           </div>
-          <div className={classes.contentBox} id={classes.contentBoxTransition}>
+            <div className={classes.contentBox} id={classes.contentBoxTransition}>
             {featuredWorks.map((val, ind) => (
+              <div key={ind}>
               <>
                 {val.number === activePagination ? (
                   <>
-                    <div className={classes.contentBoxImg}>
-                      <img src={val.img} alt="" width="100%" height="100%" />
-                    </div>
-                    <div className={classes.contentBoxCnt}>
-                      <p className={classes.heading}>{val.heading}</p>
-                      <p className={classes.text}>{val.text}</p>
-                    </div>
+                    <motion.div
+                      key={ind}
+                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 40 }}
+                      exit={{ opacity: 0, y: 30 }}
+                      transition={{ duration: 0.35 }}
+                      className={classes.contentBox}
+                      id={classes.contentBoxTransition}
+                    >
+                      <div className={classes.contentBoxImg}>
+                        <img src={val.img} alt="" width="100%" height="100%" />
+                      </div>
+                      <div className={classes.contentBoxCnt}>
+                        <p className={classes.heading}>{val.heading}</p>
+                        <p className={classes.text}>{val.text}</p>
+                      </div>
+                    </motion.div>
                   </>
                 ) : (
                   <></>
                 )}
               </>
+                </div>
             ))}
-          </div>
+            </div>
+          {/* </motion.div> */}
         </div>
       </div>
     </>
