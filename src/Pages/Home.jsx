@@ -7,6 +7,7 @@ import Services from '../Sections/Services/Services'
 import HomeSlider from "../Sections/Slider/Slider"
 import WhyUs from '../Sections/WhyUs/WhyUs'
 import WorkForm from '../Sections/WorkForm/WorkForm'
+import RatingSlider from '../Sections/RatingSlider/RatingSlider'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <WhyUs />
       <FeaturedWorks />
       <AboutJawan />
+      <RatingSlider />
       <WorkForm />
       <MyFooter />
     </>
