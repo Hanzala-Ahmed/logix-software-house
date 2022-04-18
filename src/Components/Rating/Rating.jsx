@@ -69,9 +69,9 @@ const useStyle = makeStyles((theme) => ({
     "& span": {
       width: "90%",
       // backgroundColor: "purple",
-      fontSize: "10px",
+      fontSize: "12px",
       lineHeight: "16px",
-      margin: "auto",
+      margin: "auto auto 7px auto",
     },
   },
 }));
