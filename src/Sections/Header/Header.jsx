@@ -17,7 +17,7 @@ const options = [
 
 const useStyles = makeStyles((theme) => ({
   box: {
-    height: "120px",
+    height: "80px",
     width: "100%",
     color: "white",
     display: "flex",
@@ -48,12 +48,12 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   logoBox: {
-    width: "200px",
-    height: "70px",
+    width: "130px",
+    height: "45px",
     backgroundImage: `url(${logoImg})`,
-    backgroundPposition: "center center",
+    backgroundPposition: "bottom center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
+    backgroundSize: "100%",
     padding: "0px 40px",
     // backgroundColor: "red",
     margin: "20px 0px"
