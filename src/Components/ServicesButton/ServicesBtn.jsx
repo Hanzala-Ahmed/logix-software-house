@@ -5,7 +5,7 @@ const useStyle = makeStyles((theme) => ({
   activeBtn: {
     width: "320px",
     padding: "18px 0px",
-    background: "#008749",
+    background: "#439A97",
     backgroundSize: "100% 200%",
     backgroundPosition: "left bottom",
     display: "flex",
@@ -44,7 +44,7 @@ const useStyle = makeStyles((theme) => ({
     margin: "0px 0px 24px 0px",
     cursor: "pointer",
     transition: "all 1s ease",
-    background: "linear-gradient(to left, white 50%, #008749 50%)",
+    background: "linear-gradient(to left, white 50%, #439A97 50%)",
     backgroundSize: "200% 100%",
     backgroundPosition: "right bottom",
     transition: "all 0.500s ease",

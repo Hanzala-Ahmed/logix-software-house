@@ -1,4 +1,4 @@
-import logo from "../../Assets/JawanTechLogo.png";
+import logo from "../../Assets/LogixLogo.png";
 import {
   FaFacebookF,
   FaTwitter,
@@ -45,7 +45,7 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     "& img": {
-      width: "120px",
+      width: "280px",
       [theme.breakpoints.down("xl")]:{
         width: "85px"
       }
@@ -192,7 +192,7 @@ const MyFooter = () => {
         </div>
         <BackTopBtn />
       <div className={classes.copyrightedBox}>
-        <p>Creativity with us and Inspiration Copyright &copy;2022 Jawan Teck PK. </p>
+        <p>Creativity with us and Inspiration Copyright &copy;2022 Logix Software ltd. </p>
       </div>
       </div>
     </>

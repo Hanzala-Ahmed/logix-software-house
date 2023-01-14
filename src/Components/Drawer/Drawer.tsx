@@ -60,19 +60,19 @@ export default function PersistentDrawerRight() {
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: "70%",
-            backgroundColor: "rgba(24, 117, 98, 1)",
+            backgroundColor: "#439A97",
             color: "white",
-            borderLeft: "0.3px solid rgba(555, 555, 555, 0.4)",
+            borderLeft: "0.3px solid rgba(98, 182, 183, 0.4)",
           },
           "& .MuiListItem-button": {
             display: "flex",
             flexWrap: "wrap",
           },
           "& .dropDowListBox": {
-            backgroundColor: "rgba(555, 555, 555, 0.9)",
+            backgroundColor: "#439A97",
             display: "flex",
             flexWrap: "wrap",
-            color: "rgba(24, 117, 98, 1)",
+            color: "#439A97",
           }
         }}
         variant="persistent"
@@ -92,7 +92,7 @@ export default function PersistentDrawerRight() {
           </IconButton>
         </DrawerHeader>
         <Divider sx={{
-          backgroundColor: "rgba(555, 555, 555, 0.4)"
+          backgroundColor: "rgba(98, 182, 183, 0.4)"
         }}/>
         <List>
           <ListItem

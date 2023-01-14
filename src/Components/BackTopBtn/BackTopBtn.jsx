@@ -4,7 +4,7 @@ import ArrowUpwardRoundedIcon from "@mui/icons-material/ArrowUpwardRounded";
 
 const useStyle = makeStyles((theme) => ({
   mainBox: {
-    backgroundColor: "#186F5A",
+    backgroundColor: "#62B6B7",
     width: "50px",
     height: "50px",
     borderRadius: "50%",

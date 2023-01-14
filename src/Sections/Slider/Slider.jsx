@@ -46,7 +46,7 @@ const useStyle = makeStyles((theme) => ({
   },
 
   texSliderBox: {
-    backgroundColor: "rgb(17, 203, 117, 0.3)",
+    backgroundColor: "rgba(98, 182, 183, 0.4)",
     width: "80%",
     height: "90%",
     borderTopRighRadius: "33px",

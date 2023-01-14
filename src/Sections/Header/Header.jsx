@@ -3,7 +3,7 @@ import { FaCaretDown, FaEnvelope, FaCaretUp } from "react-icons/fa";
 import { List, ListItem, Menu, MenuItem } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import PersistentDrawerRight from "../../Components/Drawer/Drawer.tsx";
-import logoImg from "../../Assets/JawanTechLogo.png";
+import logoImg from "../../Assets/LogixLogoHeader.png";
 import headerBg from "../../Assets/Backgrounds/sectionBackground.png"
 
 const options = [
@@ -17,7 +17,7 @@ const options = [
 
 const useStyles = makeStyles((theme) => ({
   box: {
-    height: "80px",
+    height: "120px",
     width: "100%",
     color: "white",
     display: "flex",
@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     position: "sticky",
     top: "0%",
-    // backgroundColor: "#186F5A",
     backgroundImage: `url(${headerBg})`,
     backgroundPosition: "center center",
     backgroundSize: "cover",
@@ -49,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   logoBox: {
-    // width: "30px",
+    width: "200px",
     height: "70px",
     backgroundImage: `url(${logoImg})`,
     backgroundPposition: "center center",
@@ -154,7 +153,6 @@ const Header = () => {
     }  
   };
   
-
   return (
     <>
       <div container className={isVisible ? classes.scrollBox : classes.box}>

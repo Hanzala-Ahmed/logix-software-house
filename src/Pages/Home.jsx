@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutJawan from '../Sections/AboutJawan/AboutJawan'
+import AboutLogix from '../Sections/AboutLogix/AboutLogix'
 import FeaturedWorks from '../Sections/FeaturedWorks/FeaturedWorks'
 import MyFooter from '../Sections/Footer/MyFooter'
 import Header from '../Sections/Header/Header'
@@ -17,7 +17,7 @@ const Home = () => {
       <Services />
       <WhyUs />
       <FeaturedWorks />
-      <AboutJawan />
+      <AboutLogix />
       <RatingSlider />
       <WorkForm />
       <MyFooter />

@@ -25,7 +25,7 @@ const useStyle = makeStyles((theme)=>({
     position: "relative",
 },
 
-aboutJawanBox: {
+aboutLogixBox: {
     // backgroundColor: "aqua", 
     width: "91%",
     display: "flex",
@@ -84,14 +84,14 @@ aboutUsWatermark: {
 },
 }))
 
-const AboutJawan = () => {
+const AboutLogix = () => {
   const classes = useStyle();
   return (
     <>
       <div className={classes.mainContainer}>
-        <div className={classes.aboutJawanBox}>
+        <div className={classes.aboutLogixBox}>
           <div className={classes.aboutUs}>
-            <MyHeading text="ABOUT JAWAN PAKISTAN" className="whiteText" />
+            <MyHeading text="ABOUT LOGIX SOFTWARE HOUSE" className="whiteText" />
             <span>
               We aim to be the most efficient provider of business process
               outsourcing services by setting the industry standards for cost
@@ -121,4 +121,4 @@ const AboutJawan = () => {
   );
 };
 
-export default AboutJawan;
+export default AboutLogix;
